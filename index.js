@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const User = require("./config");
 const app = express();
+const port =process.env.PORT || 4000 
 app.use(express.json());
 app.use(cors());
 
@@ -43,4 +44,4 @@ app.post("/update", async (req, res) => {
   res.send({ msg: "Updated" });
 });
 
-app.listen(4000, () => console.log("Up and running *4000"));
+app.listen(port, () => console.log("Up and running on port " +port));
